@@ -1,0 +1,20 @@
+<p id="navbar">
+  <mat-toolbar color="primary">
+    <mat-drawer-container class="drawer-container" autosize>
+      <mat-drawer #drawer class="drawer-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+      </mat-drawer>
+    </mat-drawer-container>
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Golearn</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
