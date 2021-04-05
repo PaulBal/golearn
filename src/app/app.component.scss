@@ -1,11 +1,13 @@
 .tutors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-content: flex-start;
 }
 
-.search {
-  margin: 0 auto;
+#search-bar {
+  position: relative;
+  margin-left: 50%;
+  margin-right: 50%;
 }

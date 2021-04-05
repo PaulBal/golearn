@@ -10,6 +10,7 @@ import { MaterialModule } from './material/material.module';
 import { LessonComponent } from './lesson/lesson.component';
 import { TutorComponent } from './tutor/tutor.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     NavbarComponent,
     LessonComponent,
     TutorComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    TeacherDashboardComponent
   ],
   imports: [
     BrowserModule,

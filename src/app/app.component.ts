@@ -46,4 +46,8 @@ export class AppComponent {
       review: 5
     }
   ]
+
+  print = (value) => {
+    console.log(value);
+  } 
 }
