@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
+import {MatIconModule} from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +12,10 @@ import { LessonComponent } from './lesson/lesson.component';
 import { TutorComponent } from './tutor/tutor.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,16 +24,19 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
     LessonComponent,
     TutorComponent,
     SearchBarComponent,
-    TeacherDashboardComponent
+    TeacherDashboardComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
