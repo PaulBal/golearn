@@ -16,6 +16,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     SearchBarComponent,
     TeacherDashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     MaterialModule,
     FormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

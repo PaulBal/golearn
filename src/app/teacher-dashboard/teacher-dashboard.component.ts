@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TutorService } from '../tutor.service';
 import { Tutor } from '../tutor/tutor';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-teacher-dashboard',
@@ -10,12 +11,22 @@ import { Tutor } from '../tutor/tutor';
 export class TeacherDashboardComponent implements OnInit {
 
   private tutors: Tutor[] = [];
+  content?: string;
 
-  constructor(private tutorService: TutorService) { }
+  constructor(private tutorService: TutorService,
+              private userService: UserService) { }
 
   ngOnInit(): void {
-    this.tutorService.tutors.subscribe((tutors: Tutor[]) => {
-      this.tutors = tutors;
-    });
+    // this.tutorService.tutors.subscribe((tutors: Tutor[]) => {
+    //   this.tutors = tutors;
+    // });
+    this.userService.getAdminBoard().subscribe(
+      data => {
+        this.content = data;
+      },
+      err => {
+        this.content = JSON.parse(err.error).message;
+      }
+    );
   }
 }
