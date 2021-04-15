@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Lesson } from './lesson/lesson';
+import { Lecture } from './lecture/lecture';
 import { Tutor } from './tutor/tutor';
 
 @Component({

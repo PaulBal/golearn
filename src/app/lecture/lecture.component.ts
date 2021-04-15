@@ -1,18 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Lesson } from './lesson';
 
 @Component({
-  selector: 'app-lesson',
-  templateUrl: './lesson.component.html',
-  styleUrls: ['./lesson.component.scss']
+  selector: 'app-lecture',
+  templateUrl: './lecture.component.html',
+  styleUrls: ['./lecture.component.scss']
 })
-export class LessonComponent implements OnInit {
+export class LectureComponent implements OnInit {
 
   @Input() title: string;
   @Input() description: string;
   @Input() studentsEnrolled: number;
   @Input() maximumEnrollments: number;
   @Input() price: number;
+  @Input() subjects: string[];
+  @Input() professorId: string;
 
   constructor() { }
 

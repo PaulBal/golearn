@@ -7,11 +7,11 @@ import { Tutor } from './tutor/tutor';
 })
 export class TutorService {
 
-  tutors: Observable<Tutor[]> = new new Observable<Tutor[]>();
+  // tutors: Observable<Tutor[]> = new new Observable<Tutor[]>();
 
   getTutors() {
     //fetch tutors from the server
 
-    return this.tutors;
+    // return this.tutors;
   }
 }

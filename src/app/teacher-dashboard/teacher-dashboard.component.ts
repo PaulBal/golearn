@@ -17,9 +17,7 @@ export class TeacherDashboardComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit(): void {
-    // this.tutorService.tutors.subscribe((tutors: Tutor[]) => {
-    //   this.tutors = tutors;
-    // });
+ 
     this.userService.getAdminBoard().subscribe(
       data => {
         this.content = data;
