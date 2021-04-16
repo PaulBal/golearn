@@ -10,7 +10,7 @@ export class LectureComponent implements OnInit {
   @Input() title: string;
   @Input() description: string;
   @Input() studentsEnrolled: number;
-  @Input() maximumEnrollments: number;
+  @Input() maxEnrollments: number;
   @Input() price: number;
   @Input() subjects: string[];
   @Input() professorId: string;
@@ -21,7 +21,7 @@ export class LectureComponent implements OnInit {
   }
 
   availableSpots = (): number => {
-    return this.maximumEnrollments - this.studentsEnrolled;
+    return this.maxEnrollments - this.studentsEnrolled;
   }
 
 }

@@ -1,3 +1,5 @@
 <div id="lectures">
-    <app-lecture *ngFor="let lecture of lectures"></app-lecture>
+    <app-lecture *ngFor="let lecture of lectures" [title]="lecture.title" [description]="lecture.description"
+    [studentsEnrolled]="lecture.studentsEnrolled" [maxEnrollments]="lecture.maxEnrollments" [price]="lecture.price"
+    [subjects]="lecture.subjects" [professorId]="lecture.professorId"></app-lecture>
 </div>
