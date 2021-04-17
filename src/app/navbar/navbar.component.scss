@@ -6,10 +6,25 @@
   margin: 0px;
 }
 
-.drawer-container {
+.sidenav {
   height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #424c86;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+
+  &__width {
+    width: 250px;
+  }
 }
 
-.drawer-sidenav {
-  color: inherit;
+#close-button {
+  position: absolute;
+  top: 2%;
+  right: 5%;
 }

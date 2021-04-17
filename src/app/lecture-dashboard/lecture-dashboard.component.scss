@@ -1,5 +1,6 @@
 #lectures {
   display: flex;
+  z-index: 1;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;

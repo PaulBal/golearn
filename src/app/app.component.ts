@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Lecture } from './lecture/lecture';
 import { Tutor } from './tutor/tutor';
 
 @Component({
