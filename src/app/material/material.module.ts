@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 const components = [
     MatMenuModule,
@@ -17,7 +18,8 @@ const components = [
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatProgressBarModule
 ]
 
 @NgModule({

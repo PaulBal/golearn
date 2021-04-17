@@ -11,6 +11,7 @@ export class LectureDashboardComponent implements OnInit {
 
   lectures: Lecture[];
   lecturesUrl: string = 'http://localhost:8080/lectures';
+  fetching: boolean = true;
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +20,7 @@ export class LectureDashboardComponent implements OnInit {
     this.http.get<Lecture[]>(this.lecturesUrl).subscribe(
         (lectures) => {
           this.lectures = lectures;
+          this.fetching = false;
         }
     );
   }
