@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tutor } from './tutor/tutor';
+import { TokenStorageService } from './_services/token-storage.service'; 
 
 @Component({
   selector: 'app-root',
@@ -8,45 +8,31 @@ import { Tutor } from './tutor/tutor';
 })
 export class AppComponent {
   title = 'golearn';
-  tutors: Tutor[] = [
-    {
-      firstName: "Melinda",
-      lastName: "Popescu",
-      expertise: ["Matematica"],
-      hoursTutored: 20,
-      review: 5
-    },
-    {
-      firstName: "Ionut",
-      lastName: "Popescu",
-      expertise: ["Matematica", "Informatica"],
-      hoursTutored: 20,
-      review: 4
-    },
-    {
-      firstName: "Alin",
-      lastName: "Alinescu",
-      expertise: ["limba romana", "limba engleza"],
-      hoursTutored: 20,
-      review: 3
-    },
-    {
-      firstName: "Florin",
-      lastName: "Petrescu",
-      expertise: ["Geografie"],
-      hoursTutored: 20,
-      review: 4.5
-    },
-    {
-      firstName: "Melinda",
-      lastName: "Popescu",
-      expertise: ["Biologie"],
-      hoursTutored: 20,
-      review: 5
-    }
-  ]
+  open: boolean = false;
+  private roles: string[] = [];
+  isLoggedIn = false;
+  isTeacher = false;
+  isLearner = false;
+  username?: string;
 
-  print = (value) => {
-    console.log(value);
-  } 
+  constructor(private tokenStorageService: TokenStorageService) { }
+
+  ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.isTeacher = this.roles.includes('ROLE_TEACHER');
+      this.isLearner = this.roles.includes('ROLE_LEARNER');
+
+      this.username = user.username;
+    }
+  }
+
+  logout(): void {
+    this.tokenStorageService.signOut();
+    window.location.reload();
+  }
 }

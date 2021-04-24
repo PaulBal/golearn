@@ -9,6 +9,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 const components = [
     MatMenuModule,
@@ -19,7 +22,11 @@ const components = [
     MatInputModule,
     MatFormFieldModule,
     MatSidenavModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatNativeDateModule,
+    MatSelectModule
 ]
 
 @NgModule({

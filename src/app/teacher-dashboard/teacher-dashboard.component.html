@@ -1,5 +1,28 @@
-<!-- <app-search-bar id="search-bar" (value)="print($event)"></app-search-bar>
-<div class="tutors">
-    <app-tutor *ngFor="let tutor of tutors" [firstName]="tutor.firstName" [lastName]="tutor.lastName" [expertise]="tutor.expertise" [hoursTutored]="tutor.hoursTutored" [review]="tutor.review">
-    </app-tutor>
-</div> -->
+<mat-card>
+    <button mat-button color="primary" (click)="onClick()">Create a new lecture</button>
+    <mat-card style="display: flex; flex-direction: column;" *ngIf="buttonClicked">
+        <label>
+            Name:
+            <input type="text" [formControl]="name">
+        </label>
+        <label>
+            Maximum number of attendees:
+            <input type="number" [formControl]="maxAttendees">
+        </label>
+        <label>
+            Subject:
+            <input type="text" [formControl]="subject">
+        </label>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div>
+            <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
+            <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+            <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
+        </div>
+    </mat-card>
+</mat-card>
