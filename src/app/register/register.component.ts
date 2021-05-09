@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,6 +12,8 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup = this.formBuilder.group({
     username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(20)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     role: ['student', Validators.required]
@@ -22,7 +25,7 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
   hide = true;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -37,18 +40,25 @@ export class RegisterComponent implements OnInit {
     this.invalidForm = false;
 
     const username =  this.registerForm.get('username').value;
+    const firstName = this.registerForm.get('firstName').value;
+    const lastName = this.registerForm.get('lastName').value;
     const email = this.registerForm.get('email').value;
     const password = this.registerForm.get('password').value;
     const role = this.registerForm.get('role').value;
 
     console.log(username + ' ' + email + password + role);
 
-    this.authService.register(username, email, password, role).subscribe(
+    this.authService.register(username, firstName, lastName, email, password, role).subscribe(
       
       data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        if(role === 'student') {
+          this.router.navigate(['lectures']);
+        } else if(role === 'tutor') {
+          this.router.navigate(['tutor']);
+        }
       },
       err => {
         this.errorMessage = err.error.message;

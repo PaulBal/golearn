@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TutorService } from '../tutor.service';
 import { Tutor } from '../tutor/tutor';
-import { UserService } from '../_services/user.service';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -18,20 +17,9 @@ export class TeacherDashboardComponent implements OnInit {
   buttonClicked: boolean = false;
   content?: string;
 
-  constructor(private tutorService: TutorService,
-              private userService: UserService) { }
+  constructor(private tutorService: TutorService) { }
 
-  ngOnInit(): void {
- 
-    this.userService.getTeacherBoard().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
-      }
-    );
-  }
+  ngOnInit(): void { }
 
   onClick() {
     this.buttonClicked = true;

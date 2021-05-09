@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material.module';
+import { MaterialModule } from './_modules/material.module';
 import { TutorComponent } from './tutor/tutor.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
@@ -16,10 +16,14 @@ import { RegisterComponent } from './register/register.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
-import { AppRoutingModule } from './modules/app-routing.module';
+import { AppRoutingModule } from './_modules/app-routing.module';
 import { LectureDashboardComponent } from './lecture-dashboard/lecture-dashboard.component';
 import { LectureComponent } from './lecture/lecture.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EnrollmentsComponent } from './enrollments/enrollments.component';
+import { MyLecturesComponent } from './my-lectures/my-lectures.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     ProfileComponent,
     HomeComponent,
     LectureDashboardComponent,
-    LectureComponent
+    LectureComponent,
+    PageNotFoundComponent,
+    EnrollmentsComponent,
+    MyLecturesComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
