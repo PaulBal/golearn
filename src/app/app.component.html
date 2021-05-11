@@ -1,5 +1,5 @@
 <div>
-  <app-toolbar [isTutor]="this.auth.isTutor" [isStudent]="this.auth.isStudent" [isLoggedIn]="this.auth.isLoggedIn"></app-toolbar>
+  <router-outlet name="menu"></router-outlet>
   <div class="container">
     <router-outlet></router-outlet>
   </div>

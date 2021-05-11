@@ -1,0 +1,47 @@
+<mat-toolbar id="navbar" color="primary">
+  <button mat-icon-button class="example-icon" (click)="open = true">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div
+    class="sidenav"
+    (click)="open = false"
+    [ngClass]="open ? 'sidenav__width' : ''"
+  >
+    <button mat-icon-button id="close-button">
+      <mat-icon>close</mat-icon>
+    </button>
+    <div *ngIf="isLoggedIn">
+      <div *ngIf="isStudent">
+        <a href="/lectures" class="nav-link" routerLink="../lectures">Lectures</a>
+        <a href="/enrollments" class="nav-link" routerLink="../enrollments"
+          >Enrollments</a
+        >
+      </div>
+      <div *ngIf="isTutor">
+        <a href="/create" class="nav-link" routerLink="../create-lecture"
+          >Create a lecture</a
+        >
+        <a href="/my-lectures" class="nav-link" routerLink="../my-lectures"
+          >My lectures</a
+        >
+      </div>
+      <a (click)="logout()">Logout</a>
+    </div>
+    <div *ngIf="!isLoggedIn">
+      <a href="/register" class="nav-link" routerLink="../register">Sign Up</a>
+      <a href="/login" class="nav-link" routerLink="../login">Login</a>
+    </div>
+  </div>
+  <span>Golearn</span>
+  <span class="spacer"></span>
+  <a
+    mat-icon-button
+    href="/profile"
+    *ngIf="isLoggedIn"
+    class="nav-link"
+    routerLink="../profile"
+    id="profile"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </a>
+</mat-toolbar>

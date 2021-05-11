@@ -8,61 +8,135 @@ import { TeacherDashboardComponent } from '../teacher-dashboard/teacher-dashboar
 import { LectureDashboardComponent } from '../lecture-dashboard/lecture-dashboard.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { RoleGuardService } from '../_guards/role-guard.service';
-import { EnrollmentsComponent } from '../enrollments/enrollments.component';
+import { EnrollmentDashboardComponent } from '../enrollment-dashboard/enrollment-dashboard.component';
 import { MyLecturesComponent } from '../my-lectures/my-lectures.component';
+import { MenuComponent } from '../menu/menu.component';
 
 const routes: Routes = [
-  { 
-    path: 'lectures', 
-    component: LectureDashboardComponent, 
-    canActivate: [RoleGuardService], 
-    data: { 
-      expectedRole: 'student' 
-    } 
-  },
-  { 
-    path: 'login', 
-    component: LoginComponent
-   },
-  { 
-    path: 'register', 
-    component: RegisterComponent
-  },
-  { path: 'profile', component: ProfileComponent },
-  { 
-    path: 'create-lecture', 
-    component: TeacherDashboardComponent,
+  {
+    path: 'lectures',
+    children: [
+      {
+        path: '',
+        component: LectureDashboardComponent,
+      },
+      {
+        path: '',
+        component: MenuComponent,
+        outlet: 'menu',
+      },
+    ],
     canActivate: [RoleGuardService],
     data: {
-      expectedRole: 'tutor'
-    }
+      expectedRole: 'student',
+    },
   },
   {
     path: 'enrollments',
-    component: EnrollmentsComponent,
+    children: [
+      {
+        path: '',
+        component: EnrollmentDashboardComponent,
+      },
+      {
+        path: '',
+        component: MenuComponent,
+        outlet: 'menu',
+      },
+    ],
     canActivate: [RoleGuardService],
     data: {
-      expectedRole: 'student'
-    }
+      expectedRole: 'student',
+    },
+  },
+  {
+    path: 'create-lecture',
+    children: [
+      {
+        path: '',
+        component: TeacherDashboardComponent,
+      },
+      {
+        path: '',
+        component: MenuComponent,
+        outlet: 'menu',
+      },
+    ],
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRole: 'tutor',
+    },
   },
   {
     path: 'my-lectures',
-    component: MyLecturesComponent,
+    children: [
+      {
+        path: '',
+        component: MyLecturesComponent,
+      },
+      {
+        path: '',
+        component: MenuComponent,
+        outlet: 'menu',
+      },
+    ],
     canActivate: [RoleGuardService],
     data: {
-      expectedRole: 'tutor'
-    }
+      expectedRole: 'tutor',
+    },
+  },
+  {
+    path: 'login',
+    children: [
+      {
+        path: '',
+        component: LoginComponent,
+      },
+      {
+        path: '',
+        component: MenuComponent,
+        outlet: 'menu',
+      },
+    ],
+  },
+  {
+    path: 'register',
+    children: [
+      {
+        path: '',
+        component: RegisterComponent,
+      },
+      {
+        path: '',
+        component: MenuComponent,
+        outlet: 'menu',
+      },
+    ],
+  },
+  {
+    path: 'profile',
+    children: [
+      {
+        path: '',
+        component: ProfileComponent,
+      },
+      {
+        path: '',
+        component: MenuComponent,
+        outlet: 'menu',
+      },
+    ],
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'login',
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

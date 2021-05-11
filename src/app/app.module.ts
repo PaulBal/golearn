@@ -21,9 +21,10 @@ import { LectureDashboardComponent } from './lecture-dashboard/lecture-dashboard
 import { LectureComponent } from './lecture/lecture.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { EnrollmentsComponent } from './enrollments/enrollments.component';
+import { EnrollmentDashboardComponent } from './enrollment-dashboard/enrollment-dashboard.component';
 import { MyLecturesComponent } from './my-lectures/my-lectures.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MenuComponent } from './menu/menu.component';
+import { EnrollmentComponent } from './enrollment/enrollment.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     LectureDashboardComponent,
     LectureComponent,
     PageNotFoundComponent,
-    EnrollmentsComponent,
+    EnrollmentDashboardComponent,
     MyLecturesComponent,
-    ToolbarComponent
+    MenuComponent,
+    EnrollmentComponent
   ],
   imports: [
     BrowserModule,

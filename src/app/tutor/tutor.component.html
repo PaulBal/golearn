@@ -1,12 +1,13 @@
 <mat-card class="tutor">
-    <mat-card-title>{{firstName}} {{lastName}}</mat-card-title>
-    <mat-card-subtitle>Ore de meditatii pe platforma: {{hoursTutored}}</mat-card-subtitle>
-    <mat-card-content>Materii predate: 
-      <ul>
-        <li *ngFor="let subject of expertise">{{subject}}</li>
-      </ul>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">Detalii</button>
-    </mat-card-actions>
+  <mat-card-title>{{ firstName }} {{ lastName }}</mat-card-title>
+  <mat-card-subtitle>Ore de meditatii pe platforma: {{ hoursTutored }}</mat-card-subtitle>
+  <mat-card-content
+    >Materii predate:
+    <ul>
+      <li *ngFor="let subject of expertise">{{ subject }}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Detalii</button>
+  </mat-card-actions>
 </mat-card>

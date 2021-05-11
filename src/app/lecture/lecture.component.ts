@@ -11,17 +11,15 @@ export class LectureComponent implements OnInit {
   @Input() description: string;
   @Input() studentsEnrolled: number;
   @Input() maxEnrollments: number;
+  @Input() availableSpots: number;
   @Input() price: number;
   @Input() subjects: string[];
   @Input() professorId: string;
+  @Input() disabled: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  availableSpots = (): number => {
-    return this.maxEnrollments - this.studentsEnrolled;
   }
 
 }

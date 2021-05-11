@@ -1,0 +1,15 @@
+#lectures {
+    display: flex;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-content: flex-start;
+  }
+  
+  #fetching {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+  }
+  
