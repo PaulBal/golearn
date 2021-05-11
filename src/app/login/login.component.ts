@@ -62,8 +62,8 @@ export class LoginComponent implements OnInit {
 
         if (role === 'student') {
           this.router.navigate(['lectures']);
-        } else if (role === 'my-lectures') {
-          this.router.navigate(['tutor']);
+        } else if (role === 'tutor') {
+          this.router.navigate(['my-lectures']);
         }
       },
       (err) => {

@@ -23,11 +23,12 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.activatedRoute.snapshot.data.expectedRole === 'student') {
+    let expectedRole = this.activatedRoute.snapshot.data.expectedRole;
+    if (expectedRole === 'student') {
       this.isLoggedIn = true;
       this.isStudent = true;
       this.isTutor = false;
-    } else {
+    } else if(expectedRole === 'tutor') {
       this.isLoggedIn = true;
       this.isStudent = false;
       this.isTutor = true;
