@@ -1,14 +1,9 @@
 <mat-spinner id="fetching" *ngIf="fetching"></mat-spinner>
 <div id="lectures">
-  <app-lecture
-    *ngFor="let lecture of lectures"
-    [title]="lecture.title"
-    [description]="lecture.description"
-    [studentsEnrolled]="lecture.studentsEnrolled"
-    [maxEnrollments]="lecture.maxEnrollments"
-    [availableSpots]="lecture.availableSpots"
-    [price]="lecture.price"
-    [subjects]="lecture.subjects"
-    [professorId]="lecture.professorId"
-  ></app-lecture>
+  <app-enrollment
+    *ngFor="let enrollment of enrollments"
+    [id]="enrollment._id"
+    [title]="enrollment.title"
+    [startDate]="enrollment.startDate"
+  ></app-enrollment>
 </div>

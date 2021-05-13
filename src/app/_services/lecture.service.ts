@@ -3,11 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Lecture } from '../lecture/lecture';
 
-const LECTURE_API = 'http://localhost:8080/lectures/';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-};
+const GET_LECTURE_EP = 'http://localhost:8080/lectures/';
+const ENROLLMENT_EP = 'http://localhost:8080/lectures/enroll/';
 
 @Injectable({
   providedIn: 'root',
@@ -16,16 +13,14 @@ export class LectureService {
   constructor(private http: HttpClient) {}
 
   getLectures(): Observable<Lecture[]> {
-    return this.http.get<Lecture[]>(LECTURE_API);
+    return this.http.get<Lecture[]>(GET_LECTURE_EP);
   }
 
-  enroll(lectureId: string, studentId: string): Observable<any> {
-    return this.http.put(
-      LECTURE_API + lectureId,
-      {
-        studentId,
-      },
-      httpOptions
-    );
+  enroll(lectureId: string): Observable<any> {
+    return this.http.put(ENROLLMENT_EP + lectureId, null);
+  }
+
+  unenroll(lectureId: string): Observable<any> {
+    return this.http.delete(ENROLLMENT_EP + lectureId);
   }
 }

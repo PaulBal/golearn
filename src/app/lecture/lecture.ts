@@ -7,5 +7,7 @@ export interface Lecture {
     availableSpots: number,
     price: number,
     subjects: string[],
-    professorId: string
+    professorId: string,
+    startDate: Date,
+    endDate: Date
 }

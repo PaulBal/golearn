@@ -2,6 +2,7 @@
 <div id="lectures">
   <app-lecture
     *ngFor="let lecture of lectures"
+    [id] = "lecture._id"
     [title]="lecture.title"
     [description]="lecture.description"
     [studentsEnrolled]="lecture.studentsEnrolled"
@@ -11,5 +12,7 @@
     [subjects]="lecture.subjects"
     [professorId]="lecture.professorId"
     [disabled]="lecture.disabled"
+    [startDate]="lecture.startDate"
+    [endDate]="lecture.endDate"
   ></app-lecture>
 </div>

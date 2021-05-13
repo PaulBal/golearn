@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   });
 
   invalidForm = false;
-  isLoggedIn = this.authService.isLoggedIn;
   isLoginFailed = false;
   errorMessage = '';
   hide = true;
@@ -35,7 +34,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
       this.role = this.tokenStorage.getUser().role;
     }
   }
@@ -58,7 +56,6 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveUser(data);
 
         this.isLoginFailed = false;
-        this.isLoggedIn = true;
 
         if (role === 'student') {
           this.router.navigate(['lectures']);

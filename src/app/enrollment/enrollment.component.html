@@ -1,1 +1,9 @@
-<p>enrollment works!</p>
+<mat-card class="lecture">
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-content>Starts at {{ getStartTime() }}</mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" *ngIf="enrolled" (click)="unEnroll()">Unenroll</button>
+      <button mat-raised-button color="primary" *ngIf="!enrolled" [disabled]="!enrolled" (click)="unEnroll()">Unenrolled</button>
+    </mat-card-actions>
+  </mat-card>
+  

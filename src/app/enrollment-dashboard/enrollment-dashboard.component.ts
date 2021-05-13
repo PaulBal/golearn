@@ -9,18 +9,15 @@ import { StudentService } from '../_services/student.service';
   styleUrls: ['./enrollment-dashboard.component.scss'],
 })
 export class EnrollmentDashboardComponent implements OnInit {
-  lectures: Lecture[];
+  enrollments: Lecture[];
   fetching: boolean = true;
   display: boolean = true;
 
-  constructor(
-    private http: HttpClient,
-    private studentService: StudentService,
-  ) {}
+  constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {
-    this.studentService.getEnrollments().subscribe((lectures: Lecture[]) => {
-      this.lectures = lectures;
+    this.studentService.getEnrollments().subscribe((enrollments: Lecture[]) => {
+      this.enrollments = enrollments;
       this.fetching = false;
     });
   }

@@ -29,7 +29,10 @@
       </mat-form-field>
     <mat-error *ngIf="invalidForm">
       <span>Please fill in all the fields correctly!</span>
-    </mat-error>  
+    </mat-error>
+    <mat-error *ngIf="isLoginFailed">
+      <span>Invalid username or password</span>
+    </mat-error>
     <button mat-raised-button color="primary" type="submit">Sign in</button>
   </form>
 </div>
