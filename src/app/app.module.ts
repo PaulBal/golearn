@@ -22,9 +22,10 @@ import { LectureComponent } from './lecture/lecture.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EnrollmentDashboardComponent } from './enrollment-dashboard/enrollment-dashboard.component';
-import { MyLecturesComponent } from './my-lectures/my-lectures.component';
+import { TutorLectureComponent } from './tutor-lecture/tutor-lecture.component';
 import { MenuComponent } from './menu/menu.component';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
+import { TutorLectureDashboardComponent } from './tutor-lecture-dashboard/tutor-lecture-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,10 @@ import { EnrollmentComponent } from './enrollment/enrollment.component';
     LectureComponent,
     PageNotFoundComponent,
     EnrollmentDashboardComponent,
-    MyLecturesComponent,
+    TutorLectureComponent,
     MenuComponent,
-    EnrollmentComponent
+    EnrollmentComponent,
+    TutorLectureDashboardComponent
   ],
   imports: [
     BrowserModule,

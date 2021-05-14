@@ -1,8 +1,8 @@
-<mat-spinner id="fetching" *ngIf="fetching"></mat-spinner>
-<div id="lectures">
+<mat-spinner class="spinner" *ngIf="fetching"></mat-spinner>
+<div class="lectures">
   <app-lecture
     *ngFor="let lecture of lectures"
-    [id] = "lecture._id"
+    [id]="lecture._id"
     [title]="lecture.title"
     [description]="lecture.description"
     [studentsEnrolled]="lecture.studentsEnrolled"

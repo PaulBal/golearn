@@ -20,7 +20,7 @@ export class EnrollmentComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  unEnroll() {
+  onUnEnroll() {
     this.lectureService.unenroll(this.id).subscribe(
       () => {
         this.enrolled = false;

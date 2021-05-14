@@ -1,9 +1,10 @@
 <mat-card class="lecture">
-    <mat-card-title>{{ title }}</mat-card-title>
-    <mat-card-content>Starts at {{ getStartTime() }}</mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" *ngIf="enrolled" (click)="unEnroll()">Unenroll</button>
-      <button mat-raised-button color="primary" *ngIf="!enrolled" [disabled]="!enrolled" (click)="unEnroll()">Unenrolled</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-title>{{ title }}</mat-card-title>
+  <mat-card-content>Starts at {{ getStartTime() }}</mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" *ngIf="enrolled" (click)="onUnEnroll()">Unenroll</button>
+    <button mat-raised-button color="primary" *ngIf="enrolled">Join</button>
+    <button mat-raised-button color="primary" *ngIf="!enrolled" [disabled]="!enrolled">Unenrolled</button>
+  </mat-card-actions>
+</mat-card>
   

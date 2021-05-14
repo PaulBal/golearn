@@ -9,7 +9,7 @@ import { LectureDashboardComponent } from '../lecture-dashboard/lecture-dashboar
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { RoleGuardService } from '../_guards/role-guard.service';
 import { EnrollmentDashboardComponent } from '../enrollment-dashboard/enrollment-dashboard.component';
-import { MyLecturesComponent } from '../my-lectures/my-lectures.component';
+import { TutorLectureDashboardComponent } from '../tutor-lecture-dashboard/tutor-lecture-dashboard.component';
 import { MenuComponent } from '../menu/menu.component';
 
 const routes: Routes = [
@@ -72,7 +72,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: MyLecturesComponent,
+        component: TutorLectureDashboardComponent,
       },
       {
         path: '',

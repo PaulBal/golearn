@@ -34,14 +34,14 @@ export class LectureComponent implements OnInit {
         this.disabled = true;
         this._snackBar.open(`You have been enrolled to ${this.title}!`, null, {duration: 3000});
       },
-      (err) => console.log(err)
+      (err) => this._snackBar.open(`You are busy at this time!`, null, {duration: 3000})
     );
   }
 
   getDate() {
     let sDate = new Date(this.startDate);
     return (
-      sDate.getUTCDate() +
+      sDate.getDate() +
       '/' +
       sDate.getUTCMonth() +
       '/' +
@@ -51,6 +51,11 @@ export class LectureComponent implements OnInit {
 
   getStartTime() {
     let sDate = new Date(this.startDate);
+    let hoursDiff = sDate.getHours() - sDate.getTimezoneOffset() / 60;
+    let minutesDiff = (sDate.getHours() - sDate.getTimezoneOffset()) % 60;
+    sDate.setHours(hoursDiff);
+    sDate.setMinutes(minutesDiff);
+
     return sDate.getUTCHours() + ':' + sDate.getUTCMinutes();
   }
 

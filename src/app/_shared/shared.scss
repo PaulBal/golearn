@@ -1,0 +1,31 @@
+.lecture {
+  margin-top: 20px;
+  width: fit-content;
+}
+
+.lectures {
+  display: flex;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-content: flex-start;
+}
+
+.spinner {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 400 px; 
+    margin: 0 px auto; 
+    margin-top: 200 px;
+}
+
+.form-field {
+    display: block;
+}

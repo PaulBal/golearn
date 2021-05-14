@@ -1,16 +1,1 @@
-#login-container {
-    display: flex;
-    flex-direction: column;
-    width: 400 px; 
-    margin: 0 px auto; 
-    margin-top: 200 px
-
-    &__profile-img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-.form-field {
-    display: block;
-}
+@import '../_shared/shared.scss';

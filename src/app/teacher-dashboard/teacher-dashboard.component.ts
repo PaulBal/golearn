@@ -1,28 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { TutorService } from '../tutor.service';
-import { Tutor } from '../tutor/tutor';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LectureService } from '../_services/lecture.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-teacher-dashboard',
   templateUrl: './teacher-dashboard.component.html',
-  styleUrls: ['./teacher-dashboard.component.scss']
+  styleUrls: ['./teacher-dashboard.component.scss'],
 })
 export class TeacherDashboardComponent implements OnInit {
+  time: string;
 
-  private name: FormControl = new FormControl('');
-  private maxAttendees: FormControl = new FormControl('');
-  private subject: FormControl = new FormControl('');
-  private tutors: Tutor[] = [];
-  buttonClicked: boolean = false;
-  content?: string;
+  createLectureForm: FormGroup = this.formBuilder.group({
+    name: [
+      '',
+      [Validators.required, Validators.minLength(4), Validators.maxLength(20)],
+    ],
+    subject: [
+      '',
+      [Validators.required, Validators.minLength(4), Validators.maxLength(20)],
+    ],
+    maxAttendees: ['', [Validators.required]],
+    date: ['', [Validators.required]],
+    time: ['', [Validators.required]],
+  });
 
-  constructor(private tutorService: TutorService) { }
+  constructor(
+    private lectureService: LectureService,
+    private formBuilder: FormBuilder,
+    private _snackBar: MatSnackBar
+  ) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
-  onClick() {
-    this.buttonClicked = true;
+  onSubmit() {
+    let title = this.createLectureForm.get('name').value;
+    let subject = this.createLectureForm.get('subject').value;
+    let maxAttendees = this.createLectureForm.get('maxAttendees').value;
+    let startDate = new Date(this.createLectureForm.get('date').value);
+    let duration = this.createLectureForm.get('time').value;
 
+    this.lectureService
+      .createLecture(title, maxAttendees, subject, startDate, duration)
+      .subscribe(
+        () => {
+          this._snackBar.open('You have created a new lecture!');
+        },
+        (err: HttpErrorResponse) => this._snackBar.open(`${err.error}!`, null, { duration: 3000 })
+      );
   }
 }

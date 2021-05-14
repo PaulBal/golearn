@@ -1,0 +1,9 @@
+<mat-spinner class="spinner" *ngIf="fetching"></mat-spinner>
+<div class="lectures">
+  <app-tutor-lecture
+    *ngFor="let lecture of createdLectures"
+    [id]="lecture._id"
+    [title]="lecture.title"
+    [startDate]="lecture.startDate"
+  ></app-tutor-lecture>
+</div>

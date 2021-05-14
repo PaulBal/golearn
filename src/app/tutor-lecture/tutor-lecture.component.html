@@ -1,0 +1,10 @@
+<mat-card class="lecture">
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-content>Starts at {{ getStartTime() }}</mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="warn" *ngIf="!deleted" (click)="onDelete()">Delete</button>
+        <button mat-raised-button color="primary" *ngIf="!deleted">Join</button>
+        <button mat-raised-button color="primary" *ngIf="deleted" [disabled]="!enrolled">Deleted</button>
+    </mat-card-actions>
+</mat-card>
+  
