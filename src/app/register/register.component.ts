@@ -68,7 +68,9 @@ export class RegisterComponent implements OnInit {
           if (role === 'student') {
             this.router.navigate(['lectures']);
           } else if (role === 'tutor') {
-            this.router.navigate(['my-lectures']);
+            this.router.navigate(['create-lecture']);
+          } else {
+            console.log(role);
           }
         },
         (err) => {

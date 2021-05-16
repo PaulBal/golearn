@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Lecture } from '../lecture/lecture';
+import { Lecture } from '../_models/lecture';
 
 const LECTURES_EP = 'http://localhost:8080/lectures/';
 const ENROLLMENT_EP = 'http://localhost:8080/lectures/enroll/';
@@ -32,7 +32,7 @@ export class LectureService {
     duration: number
   ): Observable<any> {
     let endDate = new Date();
-    endDate.setTime(endDate.getTime() + (duration * 1000 * 60));
+    endDate.setTime(startDate.getTime() + (duration * 1000 * 60));
 
     let data = {
       title: title,

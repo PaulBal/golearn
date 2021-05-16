@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LectureService } from '../_services/lecture.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teacher-dashboard',
@@ -29,7 +30,8 @@ export class TeacherDashboardComponent implements OnInit {
   constructor(
     private lectureService: LectureService,
     private formBuilder: FormBuilder,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -45,7 +47,8 @@ export class TeacherDashboardComponent implements OnInit {
       .createLecture(title, maxAttendees, subject, startDate, duration)
       .subscribe(
         () => {
-          this._snackBar.open('You have created a new lecture!');
+          this._snackBar.open('You have created a new lecture!', null, { duration: 3000 });
+          this.router.navigate(['my-lectures']);
         },
         (err: HttpErrorResponse) => this._snackBar.open(`${err.error}!`, null, { duration: 3000 })
       );

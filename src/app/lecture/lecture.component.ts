@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LectureService } from '../_services/lecture.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getDuration, getStartTime, getDate } from '../_shared/shared';
 
 @Component({
   selector: 'app-lecture',
@@ -8,6 +9,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./lecture.component.scss'],
 })
 export class LectureComponent implements OnInit {
+  getStartT = getStartTime;
+  getTime = getDuration;
+  getD = getDate;
+
   @Input() id: string;
   @Input() title: string;
   @Input() description: string;
@@ -32,37 +37,14 @@ export class LectureComponent implements OnInit {
     this.lectureService.enroll(this.id).subscribe(
       () => {
         this.disabled = true;
-        this._snackBar.open(`You have been enrolled to ${this.title}!`, null, {duration: 3000});
+        this._snackBar.open(`You have been enrolled to ${this.title}!`, null, {
+          duration: 3000,
+        });
       },
-      (err) => this._snackBar.open(`You are busy at this time!`, null, {duration: 3000})
-    );
-  }
-
-  getDate() {
-    let sDate = new Date(this.startDate);
-    return (
-      sDate.getDate() +
-      '/' +
-      sDate.getUTCMonth() +
-      '/' +
-      sDate.getUTCFullYear()
-    );
-  }
-
-  getStartTime() {
-    let sDate = new Date(this.startDate);
-    let hoursDiff = sDate.getHours() - sDate.getTimezoneOffset() / 60;
-    let minutesDiff = (sDate.getHours() - sDate.getTimezoneOffset()) % 60;
-    sDate.setHours(hoursDiff);
-    sDate.setMinutes(minutesDiff);
-
-    return sDate.getUTCHours() + ':' + sDate.getUTCMinutes();
-  }
-
-  getDuration() {
-    return (
-      (new Date(this.endDate).getTime() - new Date(this.startDate).getTime()) /
-      (60 * 1000)
+      (err) =>
+        this._snackBar.open(`You are busy at this time!`, null, {
+          duration: 3000,
+        })
     );
   }
 }

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LectureService } from '../_services/lecture.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getDuration, getStartTime, getDate } from '../_shared/shared';
 
 @Component({
   selector: 'app-enrollment',
@@ -8,9 +9,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./enrollment.component.scss'],
 })
 export class EnrollmentComponent implements OnInit {
+  getStartT = getStartTime;
+  getTime = getDuration;
+  getD = getDate;
+
   @Input() id: string;
   @Input() title: string;
   @Input() startDate: Date;
+
   enrolled: boolean = true;
 
   constructor(
@@ -32,10 +38,5 @@ export class EnrollmentComponent implements OnInit {
       },
       (err) => console.log(err)
     );
-  }
-
-  getStartTime() {
-    let date = new Date(this.startDate);
-    return date.getUTCHours() + ':' + date.getUTCMinutes();
   }
 }

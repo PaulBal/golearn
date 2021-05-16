@@ -17,9 +17,14 @@ export class TutorLectureComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getStartTime(): string {
-    let date = new Date(this.startDate);
-    return date.getUTCHours() + ':' + date.getUTCMinutes();
+  getStartTime() {
+    let sDate = new Date(this.startDate);
+    let hoursDiff = sDate.getHours() - sDate.getTimezoneOffset() / 60;
+    let minutesDiff = (sDate.getHours() - sDate.getTimezoneOffset()) % 60;
+    sDate.setHours(hoursDiff);
+    sDate.setMinutes(minutesDiff);
+
+    return sDate.getUTCHours() + ':' + (sDate.getUTCMinutes() < 10 ? '0' + sDate.getUTCMinutes() : sDate.getUTCMinutes());
   }
 
   onDelete(): void {

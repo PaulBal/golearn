@@ -1,14 +1,26 @@
 <mat-card class="lecture">
   <mat-card-title>{{ title }}</mat-card-title>
-  <mat-card-subtitle>Free spots: {{ availableSpots }}</mat-card-subtitle>
+  <!-- <mat-card-subtitle></mat-card-subtitle> -->
   <mat-card-content>
-    {{ description }} <br>
-    {{ getDate() }} <br>
-    Starts at {{ getStartTime() }} <br>
-    Duration: {{ getDuration() }} minutes
+    Free spots: {{ availableSpots }} {{ description }} <br />
+    Starts at {{ getD(startDate) }} {{ getStartT(startDate) }} <br />
+    Duration: {{ getTime(startDate, endDate) }} minutes
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="enroll()" [disabled]="availableSpots === 0 || disabled">Enroll</button>
-    <button mat-raised-button color="primary" [disabled]="availableSpots === 0 || disabled">More</button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="enroll()"
+      [disabled]="availableSpots === 0 || disabled"
+    >
+      Enroll
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="availableSpots === 0 || disabled"
+    >
+      More
+    </button>
   </mat-card-actions>
 </mat-card>
