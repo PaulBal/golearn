@@ -1,7 +1,7 @@
 <mat-card class="lecture">
   <mat-card-title>{{ title }}</mat-card-title>
   <mat-card-content
-    >Starts at {{ getD(startDate) }}
+    >Starts on {{ getD(startDate) }},
     {{ getStartT(startDate) }}</mat-card-content
   >
   <mat-card-actions>
@@ -13,7 +13,14 @@
     >
       Unenroll
     </button>
-    <button mat-raised-button color="primary" *ngIf="enrolled">Join</button>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="enrolled"
+      (click)="joinCall()"
+    >
+      Join
+    </button>
     <button
       mat-raised-button
       color="primary"

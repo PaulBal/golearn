@@ -11,6 +11,7 @@ import { RoleGuardService } from '../_guards/role-guard.service';
 import { EnrollmentDashboardComponent } from '../enrollment-dashboard/enrollment-dashboard.component';
 import { TutorLectureDashboardComponent } from '../tutor-lecture-dashboard/tutor-lecture-dashboard.component';
 import { MenuComponent } from '../menu/menu.component';
+import { CallComponent } from '../call/call.component';
 
 const routes: Routes = [
   {
@@ -126,6 +127,10 @@ const routes: Routes = [
         outlet: 'menu',
       },
     ],
+  },
+  {
+    path: 'room/:id',
+    component: CallComponent
   },
   {
     path: '',

@@ -17,7 +17,6 @@ export class TutorLectureDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.tutorService.getLectures().subscribe((lectures) => {
       this.createdLectures = lectures;
-      console.log(lectures);
       this.fetching = false;
     })
   }

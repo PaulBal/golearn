@@ -3,6 +3,7 @@
   <app-enrollment
     *ngFor="let enrollment of enrollments"
     [id]="enrollment._id"
+    [tutorId]="enrollment.tutorId"
     [title]="enrollment.title"
     [startDate]="enrollment.startDate"
   ></app-enrollment>

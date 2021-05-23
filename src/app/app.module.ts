@@ -26,6 +26,9 @@ import { TutorLectureComponent } from './tutor-lecture/tutor-lecture.component';
 import { MenuComponent } from './menu/menu.component';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { TutorLectureDashboardComponent } from './tutor-lecture-dashboard/tutor-lecture-dashboard.component';
+import { CallComponent } from './call/call.component';
+import { StreamSourceDirective } from './stream-source.directive';
+import { VideoStreamComponent } from './video-stream/video-stream.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { TutorLectureDashboardComponent } from './tutor-lecture-dashboard/tutor-
     TutorLectureComponent,
     MenuComponent,
     EnrollmentComponent,
-    TutorLectureDashboardComponent
+    TutorLectureDashboardComponent,
+    CallComponent,
+    StreamSourceDirective,
+    VideoStreamComponent
   ],
   imports: [
     BrowserModule,

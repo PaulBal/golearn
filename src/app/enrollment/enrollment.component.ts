@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LectureService } from '../_services/lecture.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { getDuration, getStartTime, getDate } from '../_shared/shared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-enrollment',
@@ -14,6 +15,7 @@ export class EnrollmentComponent implements OnInit {
   getD = getDate;
 
   @Input() id: string;
+  @Input() tutorId: string;
   @Input() title: string;
   @Input() startDate: Date;
 
@@ -21,7 +23,8 @@ export class EnrollmentComponent implements OnInit {
 
   constructor(
     private lectureService: LectureService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -38,5 +41,9 @@ export class EnrollmentComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+  }
+
+  joinCall() {
+    this.router.navigate(['room', this.id]);
   }
 }

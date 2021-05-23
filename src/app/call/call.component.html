@@ -1,0 +1,10 @@
+<div id="video-wrapper">
+  <ng-template *streamSource></ng-template>
+  <video
+    [srcObject]="this.lectureRoomService.localStream$ | async"
+    class="video"
+    autoplay
+    playsinline
+    [muted]="true"
+  ></video>
+</div>

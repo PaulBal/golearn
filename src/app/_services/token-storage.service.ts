@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
+import jwt_decode from 'jwt-decode';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenStorageService {
-
-  constructor() { }
+  constructor() {}
 
   signOut(): void {
     window.sessionStorage.clear();
@@ -36,4 +36,9 @@ export class TokenStorageService {
 
     return {};
   }
+
+  // public getRole(): string {
+  //   const jwt: any = this.getJwt();
+  //   return jwt.role;
+  // }
 }

@@ -1,5 +1,6 @@
 export interface Lecture {
     _id: string,
+    tutorId: string,
     title: string,
     description: string,
     studentsEnrolled: number,
