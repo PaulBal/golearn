@@ -1,10 +1,22 @@
 <div id="video-wrapper">
   <ng-template *streamSource></ng-template>
-  <video
-    [srcObject]="this.lectureRoomService.localStream$ | async"
-    class="video"
-    autoplay
-    playsinline
-    [muted]="true"
-  ></video>
+  <div *ngIf="this.lectureRoomService.localStream$ | async as stream">
+    <video
+      [srcObject]="stream"
+      class="video"
+      autoplay
+      playsinline
+      [muted]="true"
+    ></video>
+    <div id="buttons">
+      <button mat-fab class="button" color="primary" (click)="toggleAudio(stream)">
+        <mat-icon *ngIf="muted">mic_off</mat-icon>
+        <mat-icon *ngIf="!muted">mic</mat-icon>
+      </button>
+      <button mat-fab class="button" color="primary" (click)="toggleVideo(stream)">
+        <mat-icon *ngIf="videoOff">videocam_off</mat-icon>
+        <mat-icon *ngIf="!videoOff">videocam</mat-icon>
+      </button>
+    </div>
+  </div>
 </div>

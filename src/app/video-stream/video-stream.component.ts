@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StreamInfo } from '../_models/streamInfo';
 
 @Component({
   selector: 'app-video-stream',
@@ -6,8 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./video-stream.component.scss'],
 })
 export class VideoStreamComponent implements OnInit {
-  stream: MediaStream;
-  peerId: string;
+  streamInfo: StreamInfo;
 
   constructor() {}
 

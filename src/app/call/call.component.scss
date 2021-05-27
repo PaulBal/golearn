@@ -1,14 +1,19 @@
+@import "../_shared/shared.scss";
+
 #video-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-	flex-wrap: wrap;
-	flex-direction: row;
-	border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.video {
-	max-width: 100%;
-	max-height: 90vh;
-	border-radius: 4px;
+#buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button {
+  margin: 3px;
 }
