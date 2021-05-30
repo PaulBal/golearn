@@ -38,7 +38,8 @@
 
 .video {
   margin: 5px;
-  max-width: 100%;
-  max-height: 90vh;
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 3%;
 }

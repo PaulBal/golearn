@@ -13,6 +13,7 @@ export class LectureDashboardComponent implements OnInit {
   lectures;
   enrollments: Lecture[];
   fetching: boolean = true;
+  searchValue: string = '';
 
   constructor(private lectureService: LectureService, private studentSevice: StudentService) { }
 

@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CallService } from '../_services/call.service';
-import { TokenStorageService } from '../_services/token-storage.service';
 import { TutorService } from '../_services/tutor.service';
 
 @Component({

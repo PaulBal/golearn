@@ -1,7 +1,10 @@
 <mat-spinner class="spinner" *ngIf="fetching"></mat-spinner>
+<div class="search-container">
+  <input id="search" type="text" size="50" [(ngModel)]="searchValue">
+</div>
 <div class="lectures">
   <app-lecture
-    *ngFor="let lecture of lectures"
+    *ngFor="let lecture of lectures | lecture: searchValue"
     [id]="lecture._id"
     [title]="lecture.title"
     [description]="lecture.description"

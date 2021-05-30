@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RegisterComponent } from '../register/register.component';
 import { LoginComponent } from '../login/login.component';
-import { ProfileComponent } from '../profile/profile.component';
 import { TeacherDashboardComponent } from '../teacher-dashboard/teacher-dashboard.component';
 import { LectureDashboardComponent } from '../lecture-dashboard/lecture-dashboard.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
@@ -106,20 +105,6 @@ const routes: Routes = [
       {
         path: '',
         component: RegisterComponent,
-      },
-      {
-        path: '',
-        component: MenuComponent,
-        outlet: 'menu',
-      },
-    ],
-  },
-  {
-    path: 'profile',
-    children: [
-      {
-        path: '',
-        component: ProfileComponent,
       },
       {
         path: '',

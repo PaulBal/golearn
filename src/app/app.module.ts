@@ -14,7 +14,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './_modules/app-routing.module';
 import { LectureDashboardComponent } from './lecture-dashboard/lecture-dashboard.component';
@@ -29,6 +28,7 @@ import { TutorLectureDashboardComponent } from './tutor-lecture-dashboard/tutor-
 import { CallComponent } from './call/call.component';
 import { StreamSourceDirective } from './stream-source.directive';
 import { VideoStreamComponent } from './video-stream/video-stream.component';
+import { LecturePipe } from './lecture-dashboard/lecture.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { VideoStreamComponent } from './video-stream/video-stream.component';
     TeacherDashboardComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
     HomeComponent,
     LectureDashboardComponent,
     LectureComponent,
@@ -50,7 +49,8 @@ import { VideoStreamComponent } from './video-stream/video-stream.component';
     TutorLectureDashboardComponent,
     CallComponent,
     StreamSourceDirective,
-    VideoStreamComponent
+    VideoStreamComponent,
+    LecturePipe
   ],
   imports: [
     BrowserModule,
