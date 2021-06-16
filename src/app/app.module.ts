@@ -14,12 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './_modules/app-routing.module';
 import { LectureDashboardComponent } from './lecture-dashboard/lecture-dashboard.component';
 import { LectureComponent } from './lecture/lecture.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EnrollmentDashboardComponent } from './enrollment-dashboard/enrollment-dashboard.component';
 import { TutorLectureComponent } from './tutor-lecture/tutor-lecture.component';
 import { MenuComponent } from './menu/menu.component';
@@ -38,10 +36,8 @@ import { LecturePipe } from './lecture-dashboard/lecture.pipe';
     TeacherDashboardComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
     LectureDashboardComponent,
     LectureComponent,
-    PageNotFoundComponent,
     EnrollmentDashboardComponent,
     TutorLectureComponent,
     MenuComponent,
