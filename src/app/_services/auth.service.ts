@@ -8,9 +8,6 @@ const AUTH_API = 'http://localhost:8080/api/auth/';
   providedIn: 'root',
 })
 export class AuthService {
-  isLoggedIn: boolean;
-  isStudent: boolean;
-  isTutor: boolean;
 
   constructor(private http: HttpClient) {}
 

@@ -36,9 +36,4 @@ export class TokenStorageService {
 
     return {};
   }
-
-  // public getRole(): string {
-  //   const jwt: any = this.getJwt();
-  //   return jwt.role;
-  // }
 }

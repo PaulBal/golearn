@@ -18,7 +18,6 @@ export class MenuComponent implements OnInit {
   constructor(
     private tokenStorageService: TokenStorageService,
     public router: Router,
-    public auth: AuthService,
     public activatedRoute: ActivatedRoute
   ) {}
 

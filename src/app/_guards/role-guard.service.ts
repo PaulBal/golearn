@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
-import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 import decode from 'jwt-decode';
 
@@ -9,7 +8,7 @@ import decode from 'jwt-decode';
 })
 export class RoleGuardService implements CanActivate{
 
-  constructor(public auth: AuthService, public router: Router, public tokenService: TokenStorageService) { }
+  constructor(public router: Router, public tokenService: TokenStorageService) { }
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
 
