@@ -20,7 +20,7 @@ export class LectureService {
     return this.http.put(ENROLLMENT_EP + lectureId, null);
   }
 
-  unenroll(lectureId: string): Observable<any> {
+  cancelEnrollment(lectureId: string): Observable<any> {
     return this.http.delete(ENROLLMENT_EP + lectureId);
   }
 

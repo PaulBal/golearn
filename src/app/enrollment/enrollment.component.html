@@ -9,9 +9,9 @@
       mat-raised-button
       color="warn"
       *ngIf="enrolled"
-      (click)="onUnEnroll()"
+      (click)="onCancelEnrollment()"
     >
-      Unenroll
+      Cancel enrollment
     </button>
     <button
       mat-raised-button
@@ -27,7 +27,7 @@
       *ngIf="!enrolled"
       [disabled]="!enrolled"
     >
-      Unenrolled
+      Cancel enrollment
     </button>
   </mat-card-actions>
 </mat-card>

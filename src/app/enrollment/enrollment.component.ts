@@ -23,17 +23,17 @@ export class EnrollmentComponent implements OnInit {
 
   constructor(
     private lectureService: LectureService,
-    private _snackBar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private router: Router
   ) {}
 
   ngOnInit(): void {}
 
-  onUnEnroll() {
-    this.lectureService.unenroll(this.id).subscribe(
+  onCancelEnrollment() {
+    this.lectureService.cancelEnrollment(this.id).subscribe(
       () => {
         this.enrolled = false;
-        this._snackBar.open(
+        this.snackBar.open(
           `You have been unenrolled from ${this.title}!`,
           null,
           { duration: 3000 }
