@@ -5,7 +5,6 @@ import { RegisterComponent } from '../register/register.component';
 import { LoginComponent } from '../login/login.component';
 import { TeacherDashboardComponent } from '../teacher-dashboard/teacher-dashboard.component';
 import { LectureDashboardComponent } from '../lecture-dashboard/lecture-dashboard.component';
-import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { RoleGuardService } from '../_guards/role-guard.service';
 import { EnrollmentDashboardComponent } from '../enrollment-dashboard/enrollment-dashboard.component';
 import { TutorLectureDashboardComponent } from '../tutor-lecture-dashboard/tutor-lecture-dashboard.component';
@@ -121,8 +120,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'login',
-  },
-  { path: '**', component: PageNotFoundComponent },
+  }
 ];
 
 @NgModule({

@@ -20,6 +20,7 @@
 
 .form-container {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 400 px;
   margin: 0 px auto;
@@ -42,4 +43,9 @@
   height: 400px;
   object-fit: cover;
   border-radius: 3%;
+}
+
+#profile-img {
+  display: block;
+  padding: 20px 0px 20px 38%;
 }
