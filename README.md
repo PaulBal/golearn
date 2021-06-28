@@ -1,27 +1,8 @@
 # Golearn
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+&nbsp;&nbsp;&nbsp;People from all around the world should have access to the same resources aseverybody  else. Your  location  should  not  determine  whether  you  have  access  toquality education.  This is one of the problems this platform is seeking to solve.
 
-## Development server
+&nbsp;&nbsp;&nbsp;Golearn is a web application designed to create a welcoming environment forstudents and tutors.  Both parties get value from this platform:  tutors by teachingto an interested audience, and for students by having a convenient way of accessingquality  education. The  platform  is  built  around  the  a  idea  of  lectures  where  alimited number of students can join.The  tutors  can  create  public  video  lecture  rooms,  where  students  interestedabout  the  topic  of  the  lecture  can  join.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+&nbsp;&nbsp;&nbsp;The  students  can  ask  specific  questions, thus making the learning process more fun and effective.
+The application has a 3-Tier Architecture - Presentation Tier, Application Tier,and Data Tier.  For the presentation layer we are using CSS, HTML and Javascript(Angular framework).  In the application layer we are defining the business logicusing Javascript (NodeJS), as for the data tier, we are using NoSQL (MongoDB).
