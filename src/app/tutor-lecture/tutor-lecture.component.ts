@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TutorService } from '../_services/tutor.service';
+import { getDuration, getStartTime, getDate } from '../_shared/shared';
 
 @Component({
   selector: 'app-tutor-lecture',
@@ -22,19 +23,7 @@ export class TutorLectureComponent implements OnInit {
   ngOnInit(): void {}
 
   getStartTime() {
-    let sDate = new Date(this.startDate);
-    let hoursDiff = sDate.getHours() - sDate.getTimezoneOffset() / 60;
-    let minutesDiff = (sDate.getHours() - sDate.getTimezoneOffset()) % 60;
-    sDate.setHours(hoursDiff);
-    sDate.setMinutes(minutesDiff);
-
-    return (
-      sDate.getUTCHours() +
-      ':' +
-      (sDate.getUTCMinutes() < 10
-        ? '0' + sDate.getUTCMinutes()
-        : sDate.getUTCMinutes())
-    );
+    return getStartTime(this.startDate);
   }
 
   onDelete(): void {
