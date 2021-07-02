@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TutorService } from '../_services/tutor.service';
-import { getDuration, getStartTime, getDate } from '../_shared/shared';
+import { getStartTime } from '../_shared/shared';
 
 @Component({
   selector: 'app-tutor-lecture',
